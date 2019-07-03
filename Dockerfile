@@ -21,4 +21,4 @@ RUN gem install bundler:${BUNDLER_VERSION} \
 # Copy the main application.
 COPY . ./
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "/app/entrypoint.sh" ]
