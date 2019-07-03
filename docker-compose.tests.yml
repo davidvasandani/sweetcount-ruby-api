@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  newman:
+    build:
+      context: ./dockerfiles
+      dockerfile: Dockerfile-newman
+    image: sweetcount/newman:latest
+    volumes:
+      - ./tests:/app
+    entrypoint: ["/app/run_tests.sh"]
+    networks:
+      - backend

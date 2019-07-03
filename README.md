@@ -3,12 +3,10 @@
 The Sweetcount System increments a count via a POST call, and returns that count via a GET call.
 
 To start the application:  
-`docker-compose up -d`
+`make up`
 
 To tails the logs:  
-`docker-compose logs -f`
+`make logs`
 
 To test the application:  
-`./tests/run_tests.sh`  
-_**NOTE:** this requires newman_  
-`npm install -g newman`
+`make test`
