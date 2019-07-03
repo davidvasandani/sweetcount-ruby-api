@@ -9,4 +9,6 @@ To tails the logs:
 `docker-compose logs -f`
 
 To test the application:  
-`./tests/run_tests.sh`
+`./tests/run_tests.sh`  
+_this requires newman_  
+`npm install -g newman`
