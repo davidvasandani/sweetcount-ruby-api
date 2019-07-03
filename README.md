@@ -10,5 +10,5 @@ To tails the logs:
 
 To test the application:  
 `./tests/run_tests.sh`  
-_this requires newman_  
+_**NOTE:** this requires newman_  
 `npm install -g newman`
