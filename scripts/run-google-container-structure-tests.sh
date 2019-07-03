@@ -59,19 +59,24 @@ test-sweetcount() {
     test --image sweetcount/app:test --config "${FUNCNAME[0]}".yaml
 }
 
+cleanup() {
+  docker rmi sweetcount/newman:test
+  docker rmi sweetcount/app:test
+}
+
 main() {
   st=$(date +%s)
-  build-googlecst &
-  test-googlecst &
-  wait
+  build-googlecst
+  test-googlecst
   build-newman &
   build-sweetcount &
   wait
-  printf "${GREEN}#########################################${NC}\n"
-  printf "${GREEN}Starting Google Container Structure Tests${NC}\n"
-  printf "${GREEN}#########################################${NC}\n"
+  printf "${GREEN}#####################################################${NC}\n"
+  printf "${GREEN}##### Starting Google Container Structure Tests #####${NC}\n"
+  printf "${GREEN}#####################################################${NC}\n"
   test-newman
   test-sweetcount
+  cleanup
   et=$(date +%s)
   log "${GREEN}Total Elasped: $((et - st)) seconds${NC}"
 }
