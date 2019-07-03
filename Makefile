@@ -13,9 +13,12 @@ logs: ## tail sweetcount app logs
 test: ## run sweetcount tests
 	@docker-compose -f docker-compose.yml -f docker-compose.tests.yml up --exit-code-from newman
 
+cst: ## Google Container Structure Tests
+	@scripts/run-google-container-structure-tests.sh
+
 # PHONY (non-file) Targets
 # ------------------------
-.PHONY: up logs test help
+.PHONY: up logs test cli help
 
 # `make help` -  see http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 # ------------------------------------------------------------------------------------

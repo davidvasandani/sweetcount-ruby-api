@@ -1,0 +1,10 @@
+schemaVersion: "2.0.0"
+
+fileExistenceTests:
+  - name: 'CST'
+    path: '/bin/container-structure-test'
+    shouldExist: true
+    permissions: '-rwxr-xr-x'
+
+metadataTest:
+  entrypoint: ["/bin/container-structure-test"]

@@ -3,6 +3,8 @@ FROM node:8.16-stretch
 RUN mkdir -p /app 
 WORKDIR /app
 
+COPY run_tests.sh /app/run_tests.sh
+
 RUN npm install -g newman
 
 ENTRYPOINT ["/app/run_tests.sh"]

@@ -1,0 +1,12 @@
+schemaVersion: "2.0.0"
+
+fileExistenceTests:  
+- name: 'entrypoint'
+  path: '/app/entrypoint.sh'
+  shouldExist: true
+  permissions: '-rwxr-xr-x'
+
+fileContentTests:  
+- name: 'entrypoint'
+  path: '/app/entrypoint.sh'
+  expectedContents: ['puma']
