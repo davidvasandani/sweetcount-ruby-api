@@ -10,7 +10,7 @@ up: ## start sweetcount app
 logs: ## tail sweetcount app logs
 	@docker-compose -f docker-compose.yml logs -f
 
-test: ## run sweetcount tests
+test: ## run newman
 	@docker-compose -f docker-compose.yml -f docker-compose.tests.yml up --exit-code-from newman
 
 cst: ## run Google Container Structure Tests
@@ -18,9 +18,9 @@ cst: ## run Google Container Structure Tests
 
 # PHONY (non-file) Targets
 # ------------------------
-.PHONY: up logs test cli help
+.PHONY: up logs test cst help
 
 # `make help` -  see http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 # ------------------------------------------------------------------------------------
-help: ## Show this help
+help: ## show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
