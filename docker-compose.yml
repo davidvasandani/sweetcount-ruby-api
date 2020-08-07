@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  ruby:
+    build: ./
+    image: sweetcount/app:latest
+    ports:
+      - "3000:9292"
+    entrypoint: ["/app/entrypoint.sh"]
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

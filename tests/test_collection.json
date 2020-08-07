@@ -39,12 +39,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/count",
+					"raw": "http://ruby:9292/count",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ruby"
 					],
-					"port": "3000",
+					"port": "9292",
 					"path": [
 						"count"
 					]
@@ -92,12 +92,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3000/count",
+					"raw": "http://ruby:9292/count",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"ruby"
 					],
-					"port": "3000",
+					"port": "9292",
 					"path": [
 						"count"
 					]
